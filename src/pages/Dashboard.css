@@ -1,0 +1,35 @@
+/* Dashboard Styles */
+.dashboard {
+  padding: 40px;
+  background-color: #2c2c3d;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin: 40px auto;
+  max-width: 800px;
+  color: #e4e4e4;
+}
+
+.dashboard h1 {
+  font-size: 28px;
+  color: #f9844a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard canvas {
+  background-color: #3b3b4e;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Responsive Chart */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .dashboard h1 {
+    font-size: 24px;
+  }
+}
