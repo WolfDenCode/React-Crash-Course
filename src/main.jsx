@@ -3,8 +3,9 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AppLayout from "./components/Applayout.jsx";
+
 import Dashboard from "./pages/Dashboard.jsx";
+import Home from "./pages/Home.jsx";
 // Loader function to load tasks from localStorage
 const taskLoader = async () => {
   const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -14,11 +15,11 @@ const taskLoader = async () => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <App></App>,
     children: [
       {
         path: "/",
-        element: <App />,
+        element: <Home></Home>,
         loader: taskLoader,
       },
       {
