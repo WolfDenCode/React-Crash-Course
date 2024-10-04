@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
+import { useLoaderData } from "react-router-dom";
 import {
   Chart,
   CategoryScale,
@@ -15,12 +16,18 @@ import "./Dashboard.css";
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const Dashboard = () => {
+  const loadedData = useLoaderData();
+  console.log(loadedData.tasks);
   const data = {
     labels: ["High", "Medium", "Low"],
     datasets: [
       {
         label: "Task Priority Distribution",
-        data: [5, 3, 8], // Mock data, replace with actual task counts
+        data: [
+          loadedData.tasks.filter((task) => task.priority === "high").length,
+          loadedData.tasks.filter((task) => task.priority === "medium").length,
+          loadedData.tasks.filter((task) => task.priority === "low").length,
+        ], // Mock data, replace with actual task counts
         backgroundColor: ["#f9844a", "#f39c12", "#e74c3c"],
       },
     ],
